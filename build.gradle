@@ -15,7 +15,7 @@ buildscript {
 plugins {
     // Apply the java-library plugin to add support for Java Library
     id 'java-library'
-    id "com.jfrog.bintray" version "1.7.3"
+    id "com.jfrog.bintray" version "1.8.4"
     id "maven-publish"
     id "java"
 }
@@ -63,7 +63,7 @@ def pomConfig = {
     }
     developers {
         developer {
-            id "ashwin"
+            id "ashwin-dinesh"
             name "Ashwin Dinesh"
             email "ashwin.dinesh01@gmail.com"
         }
@@ -89,7 +89,7 @@ publishing {
             version '0.0.1'
             pom.withXml {
                 def root = asNode()
-                root.appendNode('description', 'A Math Utils Library')
+                root.appendNode('description', 'Math Utils Java library')
                 root.appendNode('name', 'Math Utils')
                 root.appendNode('url', 'https://github.com/ashwindmk/java_mathutils')
                 root.children().last() + pomConfig
@@ -108,7 +108,7 @@ bintray {
 
     pkg {
         repo = 'maven'
-        name = 'mathutils-java'
+        name = 'mathutils'
         licenses = ['Apache-2.0']
         vcsUrl = 'https://github.com/ashwindmk/java_mathutils.git'
         version {
